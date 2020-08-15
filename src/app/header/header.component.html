@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="./assets/logo.png" style="width: 100px;">
+  <div class="navbar-collapse">
+    <ul class="navbar-nav">
+      <li *ngIf="!isLoggedIn" (click)="goTo('login')" class="nav-item active navigation-item">
+        <a class="nav-link">Login</a>
+      </li>
+      <li *ngIf="!isLoggedIn" (click)="goTo('signup')" class="nav-item active navigation-item">
+        <a class="nav-link">Sign up</a>
+      </li>
+      <li *ngIf="isLoggedIn" (click)="goTo('play')" class="nav-item active navigation-item">
+        <a class="nav-link">Play</a>
+      </li>
+      <li *ngIf="isLoggedIn" (click)="logOut()" class="nav-item active navigation-item">
+        <a class="nav-link">Logout</a>
+      </li>
+      <li *ngIf="isLoggedIn" (click)="goTo('settings')" class="nav-item active navigation-item">
+        <a class="nav-link">Settings</a>
+      </li>
+      <li (click)="goTo('about')" class="nav-item active navigation-item">
+        <a class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
