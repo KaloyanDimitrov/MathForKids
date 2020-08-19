@@ -1,0 +1,13 @@
+.solution {
+    color: white;
+    font-size: 3rem;
+}
+
+.multiplication-result {
+    max-width: 100px;
+}
+
+.final-score {
+    font-size: 3rem;
+    color: white;
+}

@@ -1,13 +1,13 @@
-<div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; height: calc(100vh - 76px);">
-  <div style="height: 20%; width: 100%; background-color: rgb(252, 220, 195)">
+<div class="wrapper">
+  <div class="info-container">
 
   </div>
-  <div class="login-container">
+  <div class="main-container">
     <div class="login-input-container">
-      <input style="background-color: rgba(0,0,0,0);" type="text" placeholder="Username">
-      <input style="background-color: rgba(0,0,0,0);" type="password" placeholder="Password">
-      <button >LOS GEHT'S</button>
-      <a style="cursor: pointer; color: white">Ich bin neu</a>
+      <input [formControl]="usernameFormControl" style="background-color: rgba(0,0,0,0);" type="text" placeholder="Username">
+      <input [formControl]="passwordFormControl" style="background-color: rgba(0,0,0,0);" type="password" placeholder="Password">
+      <button (click)="login()">LOS GEHT'S</button>
+      <a (click)="signUp()" style="cursor: pointer; color: white">Ich bin neu</a>
     </div>
   </div>
 </div>
