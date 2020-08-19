@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { SettingsService } from '../services/settings.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -9,21 +11,23 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn = false;
+  currentRoute: string;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private settingsService: SettingsService
   ) { }
 
   ngOnInit() {
-    console.log('Header component is created!');
-  }
-
-  logIn() {
-    this.isLoggedIn = true;
+    this.settingsService.isLoggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((navEnd: NavigationEnd) => {
+      this.currentRoute = navEnd.url.split('/')[1];
+    });
   }
 
   logOut() {
-    this.isLoggedIn = false;
+    this.settingsService.isLoggedIn.next(false);
+    this.router.navigate(['login']);
   }
 
   goTo(route: string) {

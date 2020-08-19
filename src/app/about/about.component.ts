@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  images = ['./assets/natalia-tablica2.1.png', './assets/natalia-tablica2.2.png', './assets/natalia-tablica2.3.png'];
+  selectedImageIndex = 0;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  previousImage() {
+    if (this.selectedImageIndex === 0) {
+      this.selectedImageIndex = this.images.length - 1;
+    } else {
+      this.selectedImageIndex--;
+    }
+  }
+
+  nextImage() {
+
+    if ((this.images.length - 1) === this.selectedImageIndex) {
+      this.selectedImageIndex = 0;
+    } else {
+      this.selectedImageIndex++;
+    }
   }
 
 }

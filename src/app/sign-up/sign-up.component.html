@@ -1,3 +1,13 @@
-<p>
-  sign-up works!
-</p>
+<div class="wrapper">
+  <div class="info-container" style="background-color: #b371a2;">
+
+  </div>
+  <div class="main-container">
+    <form class="register-input-container">
+      <input [formControl]="usernameFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="text" placeholder="Username">
+      <input [formControl]="passwordFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="password" placeholder="Password">
+      <input [formControl]="passwordConfirmFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="password" placeholder="Confirm Password">
+      <button (click)="register()">Register</button>
+    </form>
+  </div>
+</div>

@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'play', component: PlayComponent },
   { path: 'settings', component: SettingsComponent },
+  { path: '**', component: LoginComponent },
 ];
 
 export const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

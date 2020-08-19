@@ -1,0 +1,7 @@
+.register-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 250px;
+    height: 150px;
+    justify-content: space-around;
+}

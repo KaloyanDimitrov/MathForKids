@@ -8,9 +8,9 @@ import { AboutComponent } from './about/about.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PlayComponent } from './play/play.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SettingsService } from './services/settings.service';
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
    declarations: [
@@ -25,6 +25,8 @@ import { SettingsService } from './services/settings.service';
    imports: [
       BrowserModule,
       ReactiveFormsModule,
+      FormsModule,
+      MatIconModule,
       appRoutes
    ],
    providers: [

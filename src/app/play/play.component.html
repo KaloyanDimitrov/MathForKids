@@ -1,11 +1,11 @@
 <div class="wrapper">
-  <div class="info-container">
+  <!-- <div class="info-container">
 
-  </div>
-  <div class="main-container">
+  </div> -->
+  <div class="main-container" style="height: 100%">
 
     <ng-container *ngIf="gameState === gameStates.INIT">
-      <button (click)="startRegularGame()">
+      <button style="margin-bottom: 30px;" (click)="startRegularGame()">
         Start Regular Game
       </button>
       <button (click)="startRandomGame()">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-login',
@@ -9,15 +10,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  usernameFormControl: FormControl;
-  passwordFormControl: FormControl;
-
+  usernameFormControl = new FormControl();
+  passwordFormControl = new FormControl();
 
   constructor(
-    private router: Router
+    private router: Router,
+    private settingsService: SettingsService
   ) {
-    this.usernameFormControl = new FormControl();
-    this.passwordFormControl = new FormControl();
   }
 
   ngOnInit() {
@@ -26,6 +25,7 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.usernameFormControl.value);
     console.log(this.passwordFormControl.value);
+    this.settingsService.isLoggedIn.next(true);
     this.router.navigate(['play']);
   }
 

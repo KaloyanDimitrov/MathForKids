@@ -4,9 +4,11 @@
   </div>
   <div class="main-container">
     <div class="login-input-container">
-      <input [formControl]="usernameFormControl" style="background-color: rgba(0,0,0,0);" type="text" placeholder="Username">
-      <input [formControl]="passwordFormControl" style="background-color: rgba(0,0,0,0);" type="password" placeholder="Password">
-      <button (click)="login()">LOS GEHT'S</button>
+      <form class="login-form-container">
+        <input [formControl]="usernameFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="text" placeholder="Username">
+        <input [formControl]="passwordFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="password" placeholder="Password">
+        <button (click)="login()">LOS GEHT'S</button>
+      </form>
       <a (click)="signUp()" style="cursor: pointer; color: white">Ich bin neu</a>
     </div>
   </div>

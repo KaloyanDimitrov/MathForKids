@@ -81,6 +81,7 @@ export class PlayComponent implements OnInit {
 
   startRandomGame() {
     this.playMode = this.playModes.RANDOM;
+    this.totalTasksNumber = this.settingsService.numberOfExercises;
     this.startGame();
   }
 
