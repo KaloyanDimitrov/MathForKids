@@ -11,6 +11,7 @@ import { PlayComponent } from './play/play.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SettingsService } from './services/settings.service';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
    declarations: [
@@ -27,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
       ReactiveFormsModule,
       FormsModule,
       MatIconModule,
+      HttpClientModule,
       appRoutes
    ],
    providers: [
