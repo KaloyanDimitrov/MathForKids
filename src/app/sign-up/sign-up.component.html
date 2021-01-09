@@ -1,13 +1,14 @@
 <div class="wrapper">
-  <div class="info-container" style="background-color: #b371a2;">
-
+  <div class="info-container">
+    <h1 class="info-title">SIGN UP</h1>
+    <p class="info-text">Herzlich Wilkkomen! Lerne mit uns das Einmalein uns registriere dich jetzt.</p>
   </div>
   <div class="main-container">
     <form class="register-input-container">
-      <input [formControl]="usernameFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="text" placeholder="Username">
-      <input [formControl]="passwordFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="password" placeholder="Password">
-      <input [formControl]="passwordConfirmFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="password" placeholder="Confirm Password">
-      <button (click)="register()">Register</button>
+      <input class="usernameInput" [formControl]="usernameFormControl" type="text" placeholder="Benutzername">
+      <input class="passwordInput"[formControl]="passwordFormControl"  type="password" placeholder="Passwort">
+      <input class="confirmPasswordInput"[formControl]="passwordConfirmFormControl"  type="password" placeholder="Passwort bestätigen">
+      <button class="letsGoButton" (click)="register()">Registrieren</button>
     </form>
   </div>
 </div>

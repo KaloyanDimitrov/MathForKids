@@ -1,15 +1,17 @@
 <div class="wrapper">
   <div class="info-container">
-
+      <h1 class="info-title">LOGIN</h1>
+      <p class="info-text">Hier kannst du dich einloggen. Gebe einfach deinen Bunutzernamen und das Passwort ein. Viel Spaß!</p>
   </div>
   <div class="main-container">
     <div class="login-input-container">
       <form class="login-form-container">
-        <input [formControl]="usernameFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="text" placeholder="Username">
-        <input [formControl]="passwordFormControl" style="background-color: rgba(0,0,0,0); color: white;" type="password" placeholder="Password">
-        <button (click)="login()">LOS GEHT'S</button>
+        <input class="usernameInput" [formControl]="usernameFormControl" type="text" placeholder="Benutzername">
+        <input class="passwordInput"[formControl]="passwordFormControl"  type="password" placeholder="Passwort">
+        <button class="letsGoButton" (click)="login()">Los geht's</button>
       </form>
-      <a (click)="signUp()" style="cursor: pointer; color: white">Ich bin neu</a>
+      <a class="imNew" (click)="signUp()" style="cursor: pointer; color: white">ICH BIN NEU!</a>
     </div>
   </div>
 </div>
+

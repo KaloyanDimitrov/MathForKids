@@ -1,20 +1,24 @@
 <div class="wrapper">
     <div class="info-container">
-
+        <h1 class="info-title">SETTINGS</h1>
+        <p class="info-text">Wie möchtest du das Einmalein üben? Stelle hier die Reihe, Anzahl der Übungen und die Zeiteinschränkung ein.</p>
     </div>
     <div class="main-container">
-        <div class="display: flex; justify-content: flex-start">
-            <div class="white-color">
-                <span>Table: </span>
-                <input type="text" [formControl]="tableFormControl">
+        <div class="settings-container">
+            <div class="table">
+                <span class="table-title">Reihe:</span>
+                <input class="table-input" type="text" [formControl]="tableFormControl">
             </div>
-            <div class="white-color">
-                <span>Number of exercises: </span>
-                <input type="text" [formControl]="numberOfExercisesFormControl">
+            <div class="exercises">
+                <span class="exercises-title">Übungen:</span>
+                <input class="exercises-input" type="text" [formControl]="numberOfExercisesFormControl">
             </div>
-            <div class="white-color">
-                <span>Time limit: </span>
-                <input type="text" [formControl]="timeLimitFormControl">
+            <div class="time">
+                <span class="time-title">Zeit:</span>
+                <input class="time-input" type="text" [formControl]="timeLimitFormControl">
+            </div>
+            <div>
+                <button class="letsGoButton" (click)="play()">Los geht's</button>
             </div>
         </div>
     </div>

@@ -1,43 +1,41 @@
 <div class="wrapper">
-  <!-- <div class="info-container">
-
-  </div> -->
-  <div class="main-container" style="height: 100%">
-
+  <div class="main-container">
     <ng-container *ngIf="gameState === gameStates.INIT">
-      <button style="margin-bottom: 30px;" (click)="startRegularGame()">
-        Start Regular Game
+      <button class="regularGameButton" (click)="startRegularGame()">
+        Bestimmte 1mal1-Reihe
       </button>
-      <button (click)="startRandomGame()">
-        Start Random Game
+      <button class="randomGameButton"(click)="startRandomGame()">
+        Alle 1mal1-Reihen
       </button>
     </ng-container>
 
     <ng-container *ngIf="gameState === gameStates.STARTED">
-      <div style="display: flex; justify-content: space-between; color: white; width: 650px">
+      <div class="settings">
         <div>
-          <span>Table</span> <span>{{ table }}</span>
+          <!--the table is not shown!-->
+          <span>Reihe: </span> <span>{{ table }}</span>
         </div>
         <div>
-          <span>Exercise</span> <span>{{ currentTaskNumber }} / {{ totalTasksNumber }}</span>
+          <span>Übungen:</span> <span>{{ currentTaskNumber }} / {{ totalTasksNumber }}</span>
         </div>
         <div>
-          <span>Time</span> <span>{{ timeLeft }}</span>
+          <span>Zeit:</span> <span>{{ timeLeft }}</span>
         </div>
       </div>
 
       <div class="solution">
-        <span>{{ firstNumber }} X {{ secondNumber }} = </span>
-        <input [formControl]="resultFormControl" type="number" class="multiplication-result" (keyup.enter)="submitResult()">
+        <span class="numbers">{{ firstNumber }} X {{ secondNumber }} = </span>
+        <input class="multiplication-result" [formControl]="resultFormControl" type="number" (keyup.enter)="submitResult()">
       </div>
     </ng-container>
 
     <ng-container *ngIf="gameState === gameStates.FINISHED">
-      <span class="final-score">You managed {{score}} correct out of {{totalTasksNumber}}!</span>
-      <span class="final-score" *ngIf="score / totalTasksNumber > 0.85"> Excellent</span>
-      <span class="final-score" *ngIf="score / totalTasksNumber <= 0.85 && score / totalTasksNumber > 0.5"> Good Job</span>
-      <span class="final-score" *ngIf="score / totalTasksNumber <= 0.5"> You could do better</span>
-
+      <span class="final-score">Du hast {{score}} von {{totalTasksNumber}} Übungen richtig gerechnet.</span>
+      <span class="final-score" *ngIf="score / totalTasksNumber > 0.85">Prima! Weiter so!</span>
+      <span class="final-score" *ngIf="score / totalTasksNumber <= 0.85 && score / totalTasksNumber > 0.5">Gut gemacht!</span>
+      <span class="final-score" *ngIf="score / totalTasksNumber <= 0.5">Das kannst du bestimmt noch besser!</span>
+      <!--Button starts the game at exercise 10/10 and "secondNumber is missing"-->
+      <button class="playAgain" (click)="startRegularGame()">Nochmal spielen!</button>
     </ng-container>
 
   </div>

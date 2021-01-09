@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  images = ['./assets/natalia-tablica2.1.png', './assets/natalia-tablica2.2.png', './assets/natalia-tablica2.3.png'];
+  images = ['./assets/1.jpeg', './assets/2.jpeg', './assets/3.jpeg'];
   selectedImageIndex = 0;
   constructor() { }
 
@@ -23,7 +23,6 @@ export class AboutComponent implements OnInit {
   }
 
   nextImage() {
-
     if ((this.images.length - 1) === this.selectedImageIndex) {
       this.selectedImageIndex = 0;
     } else {

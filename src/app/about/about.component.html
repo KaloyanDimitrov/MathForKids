@@ -1,14 +1,16 @@
 <div class="wrapper">
-  <div style="height: 50%; width: 100%; display: flex; align-items: center; background-color: orange;">
-    <div style="text-align: center; margin: 0 50px;">
+  <div class="info-container">
+    <h1 class="info-title">ABOUT</h1>
+    <p class="info-text">
       Hello! This game will help you learn the simple multiplication as fast as possible!
       This will have to be a very inspiring text to get those kids learn the math.
       If you didn’t log it yet, do it now and let’s play! Bla Bla..
-    </div>
+    </p>
   </div>
-  <div style="height: 50%; width: 100%; background-color: teal; display: flex; justify-content: center; align-items: center">
+  <div class="main-container">
     <img [src]="'./assets/arrow_left.png'" style="width: 35px; cursor: pointer;" (click)="previousImage()">
-    <img [src]="images[selectedImageIndex]" style="height: 100%;">
-    <img [src]="'./assets/arrow_right.png'" style="width: 35px; cursor: pointer;"(click)="nextImage()">
+    <img [src]="images[selectedImageIndex]" style="height: 90%;">
+    <img [src]="'./assets/arrow_right.png'"style="width: 35px; cursor: pointer;"(click)="nextImage()">
   </div>
 </div>
+

@@ -1,46 +1,57 @@
-.navbar {
-    padding: 0;
+.navbar-nav {
+    margin-top: -25px;
+    margin-bottom: -25px;
+    margin-right: 100px;
 }
-
+.navbar{
+    height: 115px;
+}
 .navbar-collapse {
-    padding: 0 10px;
     justify-content: flex-end;
 }
 
-.nav-link {
-    font-size: 1.5rem;
-    padding: 20px 20px !important;
-    transition: 0.5s;
+.nav-item {
+    width: 130px;
+    height: 115px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 35px;
+    font-family: 'BrandonGrotesque-Bold', sans-serif;
+    text-transform: uppercase;
+    color: black;
 }
 
-.nav-item {
-    margin: 0 30px;
+
+.nav-item a{
+    width: 130px;
+    height: 115px;
 }
+.nav-item a:hover{
+    color: white;
+    cursor: pointer;
+}
+
 
 .login-nav:hover {
-    background-color: rgb(252, 220, 195);
+    background-color: rgb(48, 65, 169);  
 }
 
 .signup-nav:hover {
-    background-color: #b371a2;
+    background-color: rgb(235, 85, 56);
 }
 
 .play-nav:hover {
-    background-color: rgb(201, 137, 135);
+    background-color: rgb(245, 195, 98);
 }
 
 .settings-nav:hover {
-    background-color: rgb(252, 220, 195);
+    background-color: rgb(224, 88, 144);
 }
 
 .about-nav:hover {
-    background-color: orange;
+    background-color: rgb(185, 165, 208);
 }
 
 .logout-nav:hover {
-    background-color: firebrick;
-}
-
-.navigation-item {
-    cursor: pointer;
+    background-color: rgb(33, 42, 99);
 }
