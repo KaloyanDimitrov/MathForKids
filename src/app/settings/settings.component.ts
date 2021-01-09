@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SettingsService } from '../services/settings.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   timeLimitFormControl = new FormControl();
 
   constructor(
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,4 +31,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     this.settingsService.timeLimit = this.timeLimitFormControl.value;
   }
 
+  play() {
+    this.router.navigate(['play']);
+  }
 }

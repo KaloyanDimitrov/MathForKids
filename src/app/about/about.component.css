@@ -1,7 +1,9 @@
 .main-container{
     height: 55%;
     background-color:rgb(253, 245, 93);
+    flex-direction: row;
 }
+
 .info-container{
     height: 45%;
     background-color: rgb(185, 165, 208);

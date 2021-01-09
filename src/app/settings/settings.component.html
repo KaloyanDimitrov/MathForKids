@@ -7,15 +7,21 @@
         <div class="settings-container">
             <div class="table">
                 <span class="table-title">Reihe:</span>
-                <input class="table-input" type="text" [formControl]="tableFormControl">
+                <select [formControl]="tableFormControl">
+                  <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [value]="i">{{i}}</option>
+                </select>
             </div>
             <div class="exercises">
                 <span class="exercises-title">Übungen:</span>
-                <input class="exercises-input" type="text" [formControl]="numberOfExercisesFormControl">
+                <select [formControl]="numberOfExercisesFormControl">
+                  <option *ngFor="let i of [5,10,15,20]" [value]="i">{{i}}</option>
+                </select>
             </div>
             <div class="time">
                 <span class="time-title">Zeit:</span>
-                <input class="time-input" type="text" [formControl]="timeLimitFormControl">
+                <select [formControl]="timeLimitFormControl">
+                  <option *ngFor="let i of [15,20,30,40,60]" [value]="i">{{i}}</option>
+                </select>
             </div>
             <div>
                 <button class="letsGoButton" (click)="play()">Los geht's</button>

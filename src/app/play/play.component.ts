@@ -28,7 +28,6 @@ export class PlayComponent implements OnInit {
 
   score = 0;
 
-  table: number;
   timeLeft = 60;
 
   currentTaskNumber = 1;
@@ -85,6 +84,15 @@ export class PlayComponent implements OnInit {
     this.startGame();
   }
 
+  playAgain() {
+    this.score = 0;
+    this.timeLeft = this.settingsService.timeLimit;
+    this.currentTaskNumber = 1;
+    this.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    this.gameState = this.gameStates.INIT;
+  }
+
   startGame() {
     this.gameState = this.gameStates.STARTED;
     this.timerInterval = setInterval(() => {
@@ -95,7 +103,7 @@ export class PlayComponent implements OnInit {
     }, 1000);
 
     if (this.playMode === this.playModes.SELECTED_TABLE) {
-      this.firstNumber = Math.ceil((Math.random() * 10));
+      this.firstNumber = this.settingsService.selectedTable;
       this.secondNumber = this.numbers.splice((Math.random() * 100) % this.numbers.length, 1)[0];
     } else if (this.playMode === this.playModes.RANDOM) {
       this.firstNumber = Math.ceil((Math.random() * 10));

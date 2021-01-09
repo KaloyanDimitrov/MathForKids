@@ -13,7 +13,7 @@
       <div class="settings">
         <div>
           <!--the table is not shown!-->
-          <span>Reihe: </span> <span>{{ table }}</span>
+          <span>Reihe: </span> <span>{{ firstNumber }}</span>
         </div>
         <div>
           <span>Übungen:</span> <span>{{ currentTaskNumber }} / {{ totalTasksNumber }}</span>
@@ -35,7 +35,7 @@
       <span class="final-score" *ngIf="score / totalTasksNumber <= 0.85 && score / totalTasksNumber > 0.5">Gut gemacht!</span>
       <span class="final-score" *ngIf="score / totalTasksNumber <= 0.5">Das kannst du bestimmt noch besser!</span>
       <!--Button starts the game at exercise 10/10 and "secondNumber is missing"-->
-      <button class="playAgain" (click)="startRegularGame()">Nochmal spielen!</button>
+      <button class="playAgain" (click)="playAgain()">Nochmal spielen!</button>
     </ng-container>
 
   </div>
